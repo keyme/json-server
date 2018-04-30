@@ -7,6 +7,11 @@
   "directories": {
     "test": "test"
   },
+  "files": [
+    "src/*",
+    "bin/*",
+    "lib/*"
+  ],
   "dependencies": {
     "body-parser": "^1.18.2",
     "chalk": "^2.3.0",
@@ -29,9 +34,7 @@
     "request": "^2.83.0",
     "server-destroy": "^1.0.1",
     "update-notifier": "^2.3.0",
-    "yargs": "^10.0.3"
-  },
-  "devDependencies": {
+    "yargs": "^10.0.3",
     "babel-cli": "^6.26.0",
     "babel-preset-env": "^1.6.1",
     "babel-register": "^6.26.0",
@@ -66,7 +69,8 @@
     "build": "babel src -d lib --copy-files",
     "toc": "markdown-toc -i README.md",
     "prepublishOnly": "npm run build && npm run lf && pkg-ok",
-    "precommit": "npm test"
+    "precommit": "npm test",
+    "postinstall": "npm run build"
   },
   "repository": {
     "type": "git",
